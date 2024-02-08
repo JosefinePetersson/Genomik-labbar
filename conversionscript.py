@@ -25,13 +25,13 @@ def change_headers(fasta_sequences, conversion_table, header_type):
     changed_sequences = {}
     for header, sequence in fasta_sequences.items():
         short_header = header.split()[0]
+        print("Short Header:", short_header)
         if short_header in conversion_table:
-            
-            new_header = conversion_table[short_header].get(header_type,short_header)
+            print("Conversion Table Entry:", conversion_table[short_header])
+            new_header = conversion_table[short_header].get(header_type, short_header)
             changed_sequences[new_header] = sequence
         else:
             changed_sequences[header] = sequence
-        
     return changed_sequences
 
 def write_fasta(changed_sequences, output_file):
@@ -59,6 +59,7 @@ if __name__ == "__main__":
     write_fasta(changed_sequences, "changed_FASTA.fasta")
 
     print("FASTA file with {} headers has been created.".format(header_type))
+
 
 
 
