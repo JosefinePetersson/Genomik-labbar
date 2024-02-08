@@ -1,59 +1,71 @@
 import sys
 
-def read_conversion_table(conv_table_file):
+def read_fasta(filename):
+    fasta_dict = {}
+    with open(filename, 'r') as f:
+        header = None
+        sequence = ""
+        for line in f:
+            line = line.strip()
+            if line.startswith('>'):
+                if header is not None:
+                    fasta_dict[header] = sequence
+                header = line[1:]
+                sequence = ""
+            else:
+                sequence += line
+        if header is not None:
+            fasta_dict[header] = sequence
+    return fasta_dict
+
+def read_conv_table(filename):
     conv_table = {}
-    with open(conv_table_file, 'r') as file:
-        for line in file:
-            short, medium, long, _ = line.strip().split('\t')
-            conv_table[short] = {'short': short, 'medium': medium, 'long': long}
+    with open(filename, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                fields = line.split('\t')
+                if len(fields) >= 3:
+                    short_name = fields[0]
+                    medium_name = fields[1]
+                    long_name = fields[2]
+                    conv_table[long_name] = {'short': short_name, 'medium': medium_name}
     return conv_table
 
-def convert_headers(fasta_file, conv_table, header_type):
-    converted_lines = []
-    with open(fasta_file, 'r') as file:
-        for line in file:
-            if line.startswith('>'):
-                parts = line.strip().split(' ')
-                header = parts[0][1:]
-                header_key = header.split()[0]  # Extracting the key part of the header
-                if header_key in conv_table:
-                    if header_type == 'short':
-                        new_header = conv_table[header_key]['short']
-                    elif header_type == 'medium':
-                        new_header = conv_table[header_key]['medium']
-                    elif header_type == 'long':
-                        new_header = conv_table[header_key]['long']
-                    else:
-                        new_header = header
-                    parts[0] = '>' + new_header
-                    converted_lines.append(' '.join(parts) + '\n')
-                else:
-                    converted_lines.append(line)
-            else:
-                converted_lines.append(line)
-    return converted_lines
+def convert_header(header, conv_table, mode):
+    if mode == 'short':
+        if header in conv_table and 'short' in conv_table[header]:
+            return conv_table[header]['short']
+        else:
+            return header
+    elif mode == 'medium':
+        if header in conv_table and 'medium' in conv_table[header]:
+            return conv_table[header]['medium']
+        else:
+            return header
+    elif mode == 'long':
+        return header
+    else:
+        return header
 
-def write_output(output_file, converted_lines):
-    with open(output_file, 'w') as file:
-        for line in converted_lines:
-            file.write(line)
-
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 4:
-        print("Usage: python my_code.py FASTA.fasta CONV_TABLE.txt [short|medium|long]")
+        print("Usage: python conversionscript.py FASTA.fasta CONV_TABLE.txt [short|medium|long]")
         sys.exit(1)
 
-    fasta_file = sys.argv[1]
-    conv_table_file = sys.argv[2]
-    header_type = sys.argv[3]
+    fasta_filename = sys.argv[1]
+    conv_table_filename = sys.argv[2]
+    mode = sys.argv[3]
 
-    if header_type not in ['short', 'medium', 'long']:
-        print("Invalid header type. Please choose from 'short', 'medium', or 'long'.")
-        sys.exit(1)
+    fasta_dict = read_fasta(fasta_filename)
+    conv_table = read_conv_table(conv_table_filename)
 
-    conv_table = read_conversion_table(conv_table_file)
-    converted_lines = convert_headers(fasta_file, conv_table, header_type)
-    output_file = fasta_file.split('.')[0] + '_' + header_type.upper() + '.fasta'
-    write_output(output_file, converted_lines)
-    print("Conversion completed. Output saved to", output_file)
+    for header, sequence in fasta_dict.items():
+        new_header = convert_header(header, conv_table, mode)
+        print(">%s" % new_header)
+        print(sequence)
+
+if __name__ == "__main__":
+    main()
+
 
