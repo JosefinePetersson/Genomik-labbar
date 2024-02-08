@@ -35,25 +35,17 @@ def read_conv_table(filename):
 
 
 def convert_header(header, conv_table, mode):
-    if mode == 'short':
-        if header in conv_table and 'short' in conv_table[header]:
-            print("Converting %s to short header: %s" % (header, conv_table[header]['short']))
-            return conv_table[header]['short']
-        else:
-            print("No short header found for %s" % header)
-            return header
-    elif mode == 'medium':
-        if header in conv_table and 'medium' in conv_table[header]:
-            print("Converting %s to medium header: %s" % (header, conv_table[header]['medium']))
-            return conv_table[header]['medium']
-        else:
-            print("No medium header found for %s" % header)
-            return header
-    elif mode == 'long':
-        print("Using long header: %s" % header)
-        return header
-    else:
-        return header
+    header = header.strip()  # Remove leading and trailing whitespace
+    for long_header in conv_table:
+        if header.lower() == long_header.strip().lower():  # Case-insensitive comparison
+            if mode == 'short':
+                return conv_table[long_header]['short']
+            elif mode == 'medium':
+                return conv_table[long_header]['medium']
+            elif mode == 'long':
+                return long_header
+    return header
+
 
 
 def main():
