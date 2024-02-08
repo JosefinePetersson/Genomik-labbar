@@ -18,9 +18,9 @@ elif input == 'long':
 else:
     print('Please rerun and specify exactly short, medium or long')
 
-with open('Mit/all_mit copy 5.fasta', 'r') as file:
+with open('Mit/all_mit.fasta', 'r') as file:
     seqs = file.readlines()
-with open('Mit/all_mit copy 5.fasta', 'w') as out_file:
+with open('Mit/all_mit.fasta', 'w') as out_file:
 
     for seq in seqs:
         if seq.startswith('>'):
