@@ -1,68 +1,52 @@
+
+
 import sys
 
-def read_fasta(file_path):
-    sequences = {}
-    current_header = None
-    with open(file_path, 'r') as file:
-        for line in file:
-            line = line.strip()
-            if line.startswith('>'):
-                current_header = line[1:]
-                sequences[current_header] = ''
-            else:
-                sequences[current_header] += line
-    return sequences
-
-def read_conversion_table(file_path):
-    conversion_table = {}
-    with open(file_path, 'r') as file:
-        for line in file:
+def read_conversion_table(conv_table_file):
+    conv_table = {}
+    with open(conv_table_file, 'r') as f:
+        for line in f:
             short, medium, long, _ = line.strip().split('\t')
-            conversion_table[short] = {'medium': medium, 'long': long}
-    return conversion_table
+            conv_table[short] = {'short': short, 'medium': medium, 'long': long}
+    return conv_table
 
-def change_headers(fasta_sequences, conversion_table, header_type):
-    changed_sequences = {}
-    for header, sequence in fasta_sequences.items():
-        short_header = header.split()[0]
-        print("Short Header:", short_header)
-        if short_header in conversion_table:
-            print("Conversion Table Entry:", conversion_table[short_header])
-            new_header = conversion_table[short_header].get(header_type, short_header)
-            print("New Header:", new_header)
-            changed_sequences[new_header] = sequence
-        else:
-            changed_sequences[header] = sequence
-    return changed_sequences
+def modify_header(header, conv_table, header_type):
+    header_parts = header.split()
+    short_header = header_parts[0]
+    if short_header in conv_table:
+        return conv_table[short_header][header_type] + ' ' + ' '.join(header_parts[1:])
+    return header
 
+def modify_fasta(fasta_file, conv_table, header_type):
+    modified_lines = []
+    with open(fasta_file, 'r') as f:
+        for line in f:
+            if line.startswith('>'):
+                modified_header_line = modify_header(line.strip()[1:], conv_table, header_type)
+                modified_lines.append('>' + modified_header_line + '\n')
+            else:
+                modified_lines.append(line)
+    return modified_lines
 
-def write_fasta(changed_sequences, output_file):
-    with open(output_file, 'w') as file:
-        for header, sequence in changed_sequences.items():
-            file.write('>' + header + '\n')
-            file.write(sequence + '\n')
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: python my_code.py FASTA.fasta CONV_TABLE.txt <header_type>")
-        sys.exit(1)
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python my_code.py FASTA.fasta CONV_TABLE.txt")
+        return
 
     fasta_file = sys.argv[1]
     conv_table_file = sys.argv[2]
-    header_type = sys.argv[3]
 
-    if header_type not in ['short', 'medium', 'long']:
-        print("<header_type> must be one of 'short', 'medium', or 'long'")
-        sys.exit(1)
+    conv_table = read_conversion_table(conv_table_file)
 
-    fasta_sequences = read_fasta(fasta_file)
-    conversion_table = read_conversion_table(conv_table_file)
-    changed_sequences = change_headers(fasta_sequences, conversion_table, header_type)
-    write_fasta(changed_sequences, "changed_FASTA.fasta")
+    print("Choose header type: (short, medium, long)")
+    header_type = raw_input().lower()
+    while header_type not in ['short', 'medium', 'long']:
+        print("Invalid header type. Choose from short, medium, long:")
+        header_type = raw_input().lower()
 
-    print("FASTA file with {} headers has been created.".format(header_type))
+    modified_content = modify_fasta(fasta_file, conv_table, header_type)
+    for line in modified_content:
+        print(line.strip())
 
-
-
-
-
+if __name__ == "__main__":
+    main()
