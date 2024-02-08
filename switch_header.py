@@ -1,8 +1,5 @@
-import re
-
-
-with open('Mit_conversion.tsv', 'r') as cytB_conversion:
-    lines = cytB_conversion.readlines()
+with open('mit_conversion.tsv', 'r') as mit_conversion:
+    lines = mit_conversion.readlines()
 
 data = []
 
@@ -21,16 +18,20 @@ elif input == 'long':
 else:
     print('Please rerun and specify exactly short, medium or long')
 
-with open('Mit/all_mit_1.fasta', 'r') as file:
-    seq = file.readlines()
+with open('Mit/all_mit copy 5.fasta', 'r') as file:
+    seqs = file.readlines()
+with open('Mit/all_mit copy 5.fasta', 'w') as out_file:
 
-    # for line in data:
-    #     if re.search(r'>', line):
-    #         print(line)
-   
+    for seq in seqs:
+        if seq.startswith('>'):
+            for row_index, row in enumerate(data):
+                    #print(row)
+                    if str(seq[1:-1]) in row:
+                        for col_index, value in enumerate(row):
+                              if header == col_index:
+                                out_file.write('>'+value+'\n')
 
-for row_index, row in enumerate(data):
-    for col_index, value in enumerate(row):
-        if col_index == header:
-            print(value)
+        else:
+            out_file.write(seq)
+
 
