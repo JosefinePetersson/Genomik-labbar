@@ -1,50 +1,66 @@
-#short = 0   
-#medium = 1
-#long = 2
+import sys
 
-#print("Do you want a short, medium or long header?")
-#header = input()
-
-import csv
-tsv_file = 'mit_conversion.tsv'
-fasta_file = 'all_mit_1_copy.fasta'
-
-def read_tsv(tsv_file):
-    """Reads the TSV file and returns a dictionary mapping original headers to new descriptions."""
-    mapping = {}
-    with open(tsv_file, 'r') as file:
-        reader = csv.reader(file, delimiter='\t')
-        for row in reader:
-            if len(row) >= 2:
-                mapping[row[0]] = row[1]
+def read_fasta(file_path):
+    sequences = {}
+    current_header = None
+    with open(file_path, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line.startswith('>'):
+                current_header = line[1:]
+                sequences[current_header] = ''
             else:
-                print(f"Ignoring malformed row: {row}")
-            
-    return mapping
+                sequences[current_header] += line
+    return sequences
 
-def convert_fasta(fasta_file, mapping):
-    """Converts the headers of the FASTA file based on the provided mapping."""
-    with open(fasta_file, 'r') as file:
-        lines = file.readlines()
+def read_conversion_table(file_path):
+    conversion_table = {}
+    with open(file_path, 'r') as file:
+        for line in file:
+            short, medium, long, _ = line.strip().split('\t')
+            conversion_table[short] = {'medium': medium, 'long': long}
+    return conversion_table
 
-    converted_lines = []
-    for line in lines:
-        if line.startswith('>'):
-            header = line.strip().lstrip('>')
-            if header in mapping:
-                new_header = mapping[header]
-                converted_lines.append(f'>{new_header}\n')
+def change_headers(fasta_sequences, conversion_table, header_type):
+    changed_sequences = {}
+    for header, sequence in fasta_sequences.items():
+        short_header = header.split()[0]
+        if short_header in conversion_table:
+            if header_type in conversion_table[short_header]:
+                new_header = conversion_table[short_header][header_type] + ' ' + ' '.join(header.split()[1:])
+                changed_sequences[new_header] = sequence
             else:
-                converted_lines.append(line)
+                changed_sequences[header] = sequence
         else:
-            converted_lines.append(line)
+            changed_sequences[header] = sequence
+    return changed_sequences
 
-    with open(fasta_file, 'w') as file:
-        file.writelines(converted_lines)
+def write_fasta(changed_sequences, output_file):
+    with open(output_file, 'w') as file:
+        for header, sequence in changed_sequences.items():
+            file.write('>' + header + '\n')
+            file.write(sequence + '\n')
 
+if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: python my_code.py FASTA.fasta CONV_TABLE.txt <header_type>")
+        sys.exit(1)
 
-mapping = read_tsv(tsv_file)
-convert_fasta(fasta_file, mapping)
+    fasta_file = sys.argv[1]
+    conv_table_file = sys.argv[2]
+    header_type = sys.argv[3]
+
+    if header_type not in ['short', 'medium', 'long']:
+        print("<header_type> must be one of 'short', 'medium', or 'long'")
+        sys.exit(1)
+
+    fasta_sequences = read_fasta(fasta_file)
+    conversion_table = read_conversion_table(conv_table_file)
+    changed_sequences = change_headers(fasta_sequences, conversion_table, header_type)
+    write_fasta(changed_sequences, "changed_FASTA.fasta")
+
+    print("FASTA file with {} headers has been created.".format(header_type))
+
 
 
 
