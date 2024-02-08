@@ -45,9 +45,9 @@ def main():
         file_name = sys.argv[1]
         headertype = sys.argv[2]
         if 'mitochondria' in file_name:
-            conversion_file = 'mitochondria_conversion.txt'
+            conversion_file = 'CONV_TABLE.txt'
         elif 'cytb' in file_name:
-            conversion_file = 'cytb_conversion.txt'
+            conversion_file = 'CONV_TABLE.txt'
         else:
             print('No idea which conversion file to use')
             return
