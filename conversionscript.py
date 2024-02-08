@@ -15,13 +15,14 @@ def convert_headers(fasta_file, conv_table, header_type):
             if line.startswith('>'):
                 parts = line.strip().split(' ')
                 header = parts[0][1:]
-                if header in conv_table:
+                header_key = header.split()[0]  # Extracting the key part of the header
+                if header_key in conv_table:
                     if header_type == 'short':
-                        new_header = conv_table[header]['short']
+                        new_header = conv_table[header_key]['short']
                     elif header_type == 'medium':
-                        new_header = conv_table[header]['medium']
+                        new_header = conv_table[header_key]['medium']
                     elif header_type == 'long':
-                        new_header = conv_table[header]['long']
+                        new_header = conv_table[header_key]['long']
                     else:
                         new_header = header
                     parts[0] = '>' + new_header
@@ -55,5 +56,4 @@ if __name__ == '__main__':
     output_file = fasta_file.split('.')[0] + '_' + header_type.upper() + '.fasta'
     write_output(output_file, converted_lines)
     print("Conversion completed. Output saved to", output_file)
-
 
