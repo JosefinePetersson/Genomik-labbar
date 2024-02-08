@@ -1,0 +1,14 @@
+mA_axis mit_axis_axis   OR143296.1 Axis axis isolate AIWC-HRM-007 mitochondrion, complete genome
+mB_babyr    mit_babyrousa   OK539643.1 Babyrousa babyrussa mitochondrion, complete genome
+mB_idaho    mit_brachylagus_idahoensis  OL436257.1 Brachylagus idahoensis voucher UWBM82570 mitochondrion, complete genome
+mC_atten    mit_crocidura_attenuata KP120863.2 Crocidura attenuata mitochondrion, complete genome
+mE_europ    mit_erinaceus_europeaus NC_002080.2 Erinaceus europaeus mitochondrion, complete genome
+mH_aquat    mit_hyemoschus_aquaticus    JN632650.1 Hyemoschus aquaticus isolate GLC16 mitochondrion, complete genome
+mL_allen    mit_lepus_alleni    ON456168.1 Lepus alleni voucher UWBM81684 mitochondrion, complete genome
+mN_haina    mit_neohylomys_hainanensis  NC_063830.1 Neohylomys hainanensis voucher HN20N051 mitochondrion, complete genome
+mC_pruin    mit_coendou_pruinosus   CM051845.1 Erethizon dorsatum isolate mEreDor1 mitochondrion, whole genome shotgun sequence
+mP_afric    mit_phacochoerus_africanus  DQ409327.1 Phacochoerus africanus mitochondrion, complete genome
+mS_parad    mit_solenodon_paradoxus_woodi   KU697359.1 Solenodon paradoxus woodi isolate SPA-K mitochondrion, complete genome
+mS_scrof    mit_sus_scrofa_domestica    AP003428.1 Sus scrofa domestica mitochondrial DNA, complete genome
+mE_comme    mit_ephalorhynchus_commersonii  OL505399.1 Cephalorhynchus commersonii isolate SRR12437578 mitochondrion, complete genome
+mC_heavi    mit_cephalorhynchus_heavisidii  JN632624.1 Cephalorhynchus heavisidii isolate SUN mitochondrion, complete genome              

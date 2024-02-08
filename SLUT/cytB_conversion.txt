@@ -12,4 +12,3 @@ cH_aquat    cyt_Hyemoschus_aquaticus    JN632650.1:14161-15300 Hyemoschus aquati
 cN_haina    cyt_Neohylomys_hainanensis  NC_063830.1:14188-15328 Neohylomys hainanensis voucher HN20N051 mitochondrion, complete genome
 cP_afric    cyt_Phacocherus_africanus   DQ409327.1:15447-16586 Phacochoerus africanus mitochondrion, complete genome
 cS_scrof    cyt_Sus_scrofa  AP003428.1:14164-15303 Sus scrofa domestica mitochondrial DNA, complete genome
-
