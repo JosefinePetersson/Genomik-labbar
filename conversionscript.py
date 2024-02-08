@@ -68,10 +68,19 @@ def main():
     fasta_dict = read_fasta(fasta_filename)
     conv_table = read_conv_table(conv_table_filename)
 
+    print("Headers from FASTA file:")
+    for header in fasta_dict.keys():
+        print(header)
+
+    print("\nHeaders from conversion table:")
+    for header in conv_table.keys():
+        print(header)
+
     for header, sequence in fasta_dict.items():
         new_header = convert_header(header, conv_table, mode)
         print(">%s" % new_header)
         print(sequence)
+
 
 if __name__ == "__main__":
     main()
