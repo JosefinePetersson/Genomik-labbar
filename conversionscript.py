@@ -28,9 +28,11 @@ def read_conv_table(filename):
                 if len(fields) >= 3:
                     short_name = fields[0]
                     medium_name = fields[1]
-                    long_name = fields[2]
+                    long_name = fields[2].strip()  # Strip leading and trailing whitespace
                     conv_table[long_name] = {'short': short_name, 'medium': medium_name}
     return conv_table
+
+
 
 def convert_header(header, conv_table, mode):
     if mode == 'short':
