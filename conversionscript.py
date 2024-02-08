@@ -29,10 +29,12 @@ def change_headers(fasta_sequences, conversion_table, header_type):
         if short_header in conversion_table:
             print("Conversion Table Entry:", conversion_table[short_header])
             new_header = conversion_table[short_header].get(header_type, short_header)
+            print("New Header:", new_header)
             changed_sequences[new_header] = sequence
         else:
             changed_sequences[header] = sequence
     return changed_sequences
+
 
 def write_fasta(changed_sequences, output_file):
     with open(output_file, 'w') as file:
