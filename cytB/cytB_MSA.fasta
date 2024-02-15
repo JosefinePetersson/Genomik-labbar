@@ -1,3 +1,24 @@
+>KY996501.1:14185-15330 Osphranter rufus mitochondrion, complete genome
+atgactaacttacgtaaaacccacccactaattaaaattattaaccactcatttattgac
+ctaccagcgccctcaaacatttcagcctgatgaaacttcggctcactactaggagcctgc
+ttaattatccaaattctcacaggcctatttctagccatacattacacgtcagacacccta
+acagccttctcatcagtcgcccatatctgccgagacgtaaactacggctgattgatccgc
+aatctacacgctaacggagcatccatattcttcatatgcctgttcctccacgtaggacga
+ggcatctactacggctcatatctctacaaagagacatgaaatatcggagtaatcctccta
+ctaaccgtcatagcaacagctttcgtaggctatgtcctaccgtgaggacaaatatcattc
+tgaggggccaccgtaattaccaatctcctatctgctatcccctacatcggcacaacacta
+gtagaatgaatctgagggggattctccgtagacaaagccacccttacacgcttctttgcc
+ttccactttattttacccttcattattatagccttagtactagtccacctcctattccta
+cacgaaacaggctctaacaatccatcagggattaaccctgactcagacaaaatcccattc
+cacccatactacacaatcaaagatgcacttggcttcatacttatactcctcgtcttactc
+tcat------tagccctattctcacccgacatactaggagacccagataacttctcccct
+gccaacccactgaacactcccccgcatattaaaccagaatggtatttcctatttgcatac
+gccatcctccgatccatccccaacaaactaggaggtgtattagccctactagcatctatc
+ttaatcctccttatcatcccactcctccatacatctaaacaacgaagcctaatattccga
+ccaatctcccaaacactattctgaatcctaaccgctaacctaattaccctcacctgaatc
+ggaggccaaccagtagaacaaccatacatcatcattggccaagtagcatcaatttcatac
+ttcctcctaatcatcgtcctcataccacttgctggattatttgaaaactacatgctagaa
+ccaaaatgaaga
 >OR143296.1:14156-15295 Axis axis isolate AIWC-HRM-007 mitochondrion, complete genome
 atgatcaacatccgaaaaactcacccattaataaaaattgtaaacaacgcattcattgac
 ctcccagccccatcaaatatttcatcctgatggaacttcggctctttgctaggagtctgc
@@ -18,7 +39,7 @@ ctgatcctaattcttatacccctcctccacacatccaaacaacgcagcataatattccga
 ccatttagccaatgcttattctgaatcttagtggcagacctactaacacttacatgaatc
 ggaggacaaccagttgaatacccctttattgtcatcggacaactagcatccattctatac
 tttcttattatcctaattcttataccaattatcagctcaatcgaaaataacctcctaaaa
-tgaaga-
+tgaaga------
 >OK539643.1:14176-15315 Babyrousa babyrussa mitochondrion, complete genome
 atgaccaacatccgaaaatcacacccactaataaaaattattaacaacacattcattgat
 ctaccaaccccctcaaacatctcatcatgatgaaactttggctccctattaggtatctgc
@@ -39,7 +60,7 @@ ctaatcctaattctaatgcccatactacacacatccaaacaacgtagcataatattccga
 cctcttagtcaatgcctattctgagtactagtagcagaccttgtcacactaacatgaatt
 ggaggacaacccgtagaacatccattcattatcatcggacaactagcctctatcctatac
 ttctcaattatcctagtactaataccaatcactagcatcattgaaaatagtctcctaaaa
-ttaaga-
+ttaaga------
 >NC_002080.2:14182-15321 Erinaceus europaeus mitochondrion, complete genome
 atgataaatatacgaaaaactcatcccctaataaaaattattaataattctttcattgat
 ttaccgactccatctaatatttcttcttgatgaaattttggttcattactaggcctatgc
@@ -60,7 +81,7 @@ ctcattctattccttttaccatacctacacacctcaaaacaccgaagcatagtattccga
 cctgtaagtcaatgtattttctgattattagtatcagacctattaattcttacttgaatt
 ggaagccagcctgtagaaaacccatttattaccatcggccaactagcctcaatttattat
 ttcctgtccattctcatcttaatccccctagcaggccttattgaaaactacatatttaaa
-tgaaga-
+tgaaga------
 >JN632650.1:14161-15300 Hyemoschus aquaticus isolate GLC16 mitochondrion, complete genome
 atgatcaacattcgaaaatcccaccccctaataaagattattaacaatgcatttattgac
 ctcccagcaccctcaaacatttcctcactgtgaaacttcggctccctactgggcatctgc
@@ -81,7 +102,7 @@ ctaatcctactactcataccccttctccatacatccaaacaacgaagcatgatatttcga
 cctctcagccaatgccttttttgaatcctagtagcagacctactcacacttacatgaatt
 ggaggccaaccagtagaacacccatacattattatcggccaactggcatccattgcatac
 ttctccatcatcctagtgctcataccaatagctggtctaatcgaaaacaaactcctgaaa
-tgaaga-
+tgaaga------
 >NC_063830.1:14188-15328 Neohylomys hainanensis voucher HN20N051 mitochondrion, complete genome
 atgacaaatacacgaaaatctcacccattactcaaaattattaacaataccttcattgat
 ctacctaccccatcaaatatttcatcatgatgaaactttggatctctattaggaatatgc
@@ -102,7 +123,7 @@ ctaatcttaatttttatacccttacttcacacagctaaacaacgaagtataatatttcga
 cctattagccaatgccttttttgacttctagtagccgatctcattactctaacatgaatt
 ggcggacaaccagttgaacacccatatattatcattggacaacttgcctctatcctttac
 ttcctaactattttaatttttcttcctattgcaggcatgattgaaaattatttcttaaac
-tgaaatt
+tgaaatt-----
 >DQ409327.1:15447-16586 Phacochoerus africanus mitochondrion, complete genome
 atgaccaacatccgaaaatcacacccactaataaaaattatcaacaatgcattcattgac
 ctcccagccccctcaaatatctcatcatgatgaaactttggatccctactaggcatctgc
@@ -123,7 +144,7 @@ ctaatcttaattctaatacccatactacacacatccaaacaacgaagcataatatttcga
 ccactaagccaatgtctattttgagtactagtagcagaccttattacactaacatgaatt
 ggaggacagcccgtagaacacccattcatcatcattggtcaactagcctccatcctatac
 ttcctaattatcctagtactaataccaattaccagtatcattgagaacaacctcttaaaa
-tgaaga-
+tgaaga------
 >OL436257.1:14173-15312 Brachylagus idahoensis voucher UWBM82570 mitochondrion, complete genome
 atgaccaacattcgtaaaactcaccccctgctaaaaatagtcaatcactctttaattgac
 ctccccgccccatcgaatatctccgcctgatgaaatttcggctcccttctaggcctgtgc
@@ -144,7 +165,7 @@ ctcattctagccatcttccccctcctacatatttccaaacaacgtagtataatattccgt
 cccattagccaagtcctcttctgaatcctcgttgcagacctcctcacactaacatgaatt
 ggcggccaaccagttgagcacccattcattactatcggacaagtagcatctatcctgtat
 ttctcaattatcctgatcctattaccccttgcaagcttaatcgaaaacaaaatccttaaa
-tgaagg-
+tgaagg------
 >AP003428.1:14164-15303 Sus scrofa domestica mitochondrial DNA, complete genome
 atgaccaacatccgaaaatcacacccactaataaaaattatcaacaacgcattcattgac
 ctcccagccccctcaaacatctcatcatgatgaaacttcggttccctcttaggcatctgc
@@ -165,7 +186,7 @@ ctaatcctaattttaatgcccatactgcacacatccaaacaacgaggcataatatttcga
 ccactaagtcaatgcctattctgaatactagtagcagacctcattacactaacatgaatt
 ggaggacaacccgtagaacacccgttcatcatcatcggccaactagcctccatcttatac
 ttcctaatcattctagtattgataccaatcactagcatcatcgaaaacaacctattaaaa
-tgaaga-
+tgaaga------
 >OL505399.1:14196-15335 Cephalorhynchus commersonii isolate SRR12437578 mitochondrion, complete genome
 atgaccaacatccgaaaaacacacccactaacaaaaatccttaacaacgcattcatcgac
 ctacccactccatctaacatctcctcatgatgaaactttggttccttactaggtctctgc
@@ -186,7 +207,7 @@ ctcatcctaatctttattccaatactccaaacatccaaacaacgaagcataatattccga
 ccctttagccaactcttattttgaaccctaatcgcagacctcctaaccctaacatgaatt
 ggaggtcaacctgtagaacacccgtacatcattgtaggccaattagcatctattttatat
 ttcttcctgatcttagtgctaataccaacagtcagccttattgaaaataaactcttaaaa
-tgaaga-
+tgaaga------
 >JN632624.1:14197-15336 Cephalorhynchus heavisidii isolate SUN mitochondrion, complete genome
 atgatcaacatccgaaaaacacacccactaataaaaatcctcaatgacgcattcatcgac
 ctacccactccatctaacatctcctcatgatgaaactttggttccttactaggtctatgt
@@ -207,7 +228,7 @@ cttatcctaatctttattccaatgcttcaaacatccaaacaacgaagcataatattccga
 cccttcagccaactcttattttgaaccctaatcgcagacctcctaaccctaacatgaatt
 ggaggtcagcctgtagaacacccgtacatcatcgtaggccaattagcatctattttatac
 ttcttcctaattttagtgctaataccaacagtcagccttattgaaaataaactcttaaaa
-tgaaga-
+tgaaga------
 >KP120863.2:14180-15319 Crocidura attenuata mitochondrion, complete genome
 atgaataatatccgaaaaactcacccactaataaaaattgttaacagctctttcattgac
 ctcccagcaccttcaaacatttcatcatgatgaaattttggctccctactaggaatttgc
@@ -228,7 +249,7 @@ gctattctagcaattattccactcctccacacagccaaacaacgaagtataatattccga
 ccaataagccaatgtctattctgaattttagtagcggacttacttacattaacttgaatc
 ggcggccagccagtcgaacacccctttgtagtaatcggtcaattagcctccgtaatttat
 ttcatactaatcctcttaattatacctattacaagcataattgaaaaccaacttttaaaa
-tgaaga-
+tgaaga------
 >ON456168.1:14169-15308 Lepus alleni voucher UWBM81684 mitochondrion, complete genome
 atgaccaacattcgtaaaactcaccccctactaaaaattgttaaccactccctaattgac
 cttcccgccccctcaaacatttcagcctgatgaaactttggctctctattaggcctatgc
@@ -249,7 +270,7 @@ ctcatcctagcaatcattcccttcctccatatatccaaacaacgcagcataatattccga
 cccatcagccaagttcttttttgaatcctcgttgcggaccttctcacactcacgtgaatt
 ggaggacagccagttgaacacccattcattactattggacaagtagcatctattctttac
 ttctctattatcctcatccttatacctctcgccagcttaatcgagaacaaaatcctcaaa
-tgaagg-
+tgaagg------
 >KC463880.1 Coendou pruinosus voucher MHNLS 7692 cytochrome b (CYTB) gene, partial cds; mitochondrial
 ------------------------------------------------------------
 -----------------------------------------------------cgtctgc
@@ -270,7 +291,7 @@ tttttaactata------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
--------
+------------
 >KU697359.1:14168-15307 Solenodon paradoxus woodi isolate SPA-K mitochondrion, complete genome
 atgaccaacattcgaaaatcccacccattaattaaaattattaacaactcatttatcgac
 ctacctaccccatccaatatctcctactgatgaaactttgggtcactactaggtttatgt
@@ -291,4 +312,4 @@ ctcattttaatagccttcccactcctacacacatctaaacaacgaagcataacattccga
 ccactaagccaattcctattctgatcattagtagccgacctgttagtattaacatgagtc
 ggagggcaaccagtagaatatccatttattattatcggacaactagcatcagtcctatat
 ttcctaattatcttagtactcataccactaacaagcctagtagagaatatcatgataaaa
-tgataa-
+tgataa------
